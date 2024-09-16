@@ -39,7 +39,7 @@ HDL_FILES+=$(MISC_FILES:%=$(MISC_DIR)/%)
 # Include ini_parser.cpp in the list of C++ source files
 CPP_FILES=$(TB).cpp ini_parser.cpp
 
-EXTRA_CFLAGS = `sdl2-config --cflags` -DVIDEO
+EXTRA_CFLAGS = --std=c++14 `sdl2-config --cflags` -DVIDEO
 EXTRA_LDFLAGS = `sdl2-config --libs` -lSDL2_image
 
 ifdef SD_EMU
