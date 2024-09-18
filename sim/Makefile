@@ -9,8 +9,8 @@ PRJ=nanomig
 OBJ_DIR=obj_dir
 
 # the original fx68k won't simulate. Thus we use this special version for simulation
-FX68K_DIR=fx68x_verilator
-FX68K_FILES=fx68k.sv fx68kAlu.sv uaddrPla.sv fx68k_MicroRom.v fx68k_NanoRom.v
+FX68K_DIR=../src/fx68k
+FX68K_FILES=fx68k.v fx68kAlu.v uaddrPla.v fx68k_MicroRom.v fx68k_NanoRom.v
 
 # Minimig-AGA
 MINIMIG_DIR=../src/minimig-aga
@@ -50,7 +50,7 @@ endif
 all: $(PRJ)
 
 $(PRJ): ${CPP_FILES} ${HDL_FILES} Makefile
-	verilator -O3 -Wno-fatal --no-timing --trace --threads 1 --trace-underscore  -top-module $(PRJ)_tb $(VERILATOR_FLAGS) -cc ${HDL_FILES} --exe ${CPP_FILES} -o ../$(PRJ) -CFLAGS "${EXTRA_CFLAGS}" -LDFLAGS "${EXTRA_LDFLAGS}"
+	verilator -O3 -Wno-fatal --no-timing --trace --threads 1 --trace-underscore  -top-module $(PRJ)_tb $(VERILATOR_FLAGS) -cc ${HDL_FILES} --exe ${CPP_FILES} -o ../$(PRJ) -CFLAGS "${EXTRA_CFLAGS}" -LDFLAGS "${EXTRA_LDFLAGS}" -Wno-WIDTHTRUNC -Wno-WIDTHEXPAND -Wno-PINMISSING -Wno-IMPLICIT
 	make -j -C ${OBJ_DIR} -f V$(PRJ)_tb.mk
 
 $(PRJ).vcd: $(PRJ)

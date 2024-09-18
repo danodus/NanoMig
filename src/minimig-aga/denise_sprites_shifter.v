@@ -96,21 +96,21 @@ always @(posedge clk)
   end
 
 // data register A
+reg sta;
 always @(posedge clk) begin
-	reg st;
-	if(clk7_en && aen && address==DATA) st <= 1;
-	if(st & clk7n_en) begin
-		st <= 0;
+	if(clk7_en && aen && address==DATA) sta <= 1;
+	if(sta & clk7n_en) begin
+		sta <= 0;
 		datla <= spr_fmode_dat;
 	end
 end
 
 // data register B
+reg stb;
 always @(posedge clk) begin
-	reg st;
-	if(clk7_en && aen && address==DATB) st <= 1;
-	if(st & clk7n_en) begin
-		st <= 0;
+	if(clk7_en && aen && address==DATB) stb <= 1;
+	if(stb & clk7n_en) begin
+		stb <= 0;
 		datlb <= spr_fmode_dat;
 	end
 end

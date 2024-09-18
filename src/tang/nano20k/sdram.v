@@ -123,8 +123,8 @@ reg [15:0] din_R;
 
 localparam SYNCD = 1;
    
+reg [SYNCD:0] syncD;   
 always @(posedge clk) begin
-   reg [SYNCD:0] syncD;   
    sd_cmd <= CMD_NOP;  // default: idle
 
    // init state machines runs once reset ends

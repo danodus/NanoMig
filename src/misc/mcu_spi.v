@@ -82,8 +82,8 @@ assign mcu_dout = spi_in_data;
      
 reg [3:0] spi_in_cnt;
 
+reg [1:0] spi_data_in_readyD;
 always @(posedge clk) begin
-   reg [1:0] spi_data_in_readyD;
    spi_data_in_readyD <= { spi_data_in_readyD[0], spi_data_in_ready };
    
    if(spi_io_ss)

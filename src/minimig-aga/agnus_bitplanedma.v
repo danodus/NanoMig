@@ -147,10 +147,10 @@ wire         ddfseq_match;
 // ECS: DDFSTOP = $E4 display data fetch not stopped
 
 
+reg [8:0] best_hdiwstrt, cur_hdiwstrt, prev_hdiwstrt;
+reg [8:0] best_hdiwstop, cur_hdiwstop, prev_hdiwstop;
+reg [10:0] d_hde;
 always @ (posedge clk) begin
-	reg [8:0] best_hdiwstrt, cur_hdiwstrt, prev_hdiwstrt;
-	reg [8:0] best_hdiwstop, cur_hdiwstop, prev_hdiwstop;
-	reg [10:0] d_hde;
 
 	if (clk7_en) begin
 		if(!hpos) begin

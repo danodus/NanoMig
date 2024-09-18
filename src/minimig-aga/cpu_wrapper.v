@@ -291,7 +291,7 @@ fx68k cpu_inst_o
 `endif
 	.oRESETn(reset_out_o),
 `ifndef VERILATOR
-	.HALTn(1),
+//	.HALTn(1),
 `endif
 	.eRWn(wr_o),
 	.ASn(as_o),
@@ -402,8 +402,8 @@ reg [4:0] z3ram_base0;
 reg [3:0] z3ram_base1;
 reg       z3ram_ena0;
 reg       z3ram_ena1;
+reg old_uds;
 always @(posedge clk) begin
-	reg old_uds;
 	old_uds <= chip_uds;
 
 	if (~reset | ~reset_out) begin
@@ -460,10 +460,10 @@ end
 reg [15:0] chipdout_i;
 reg  [2:0] ipl_i;
 reg        c_as,c_rw,c_uds,c_lds;
+reg [1:0] stage;
+reg waitm;
+reg ready;
 always @(negedge clk, negedge reset) begin
-	reg [1:0] stage;
-	reg waitm;
-	reg ready;
 
 	if(~reset) begin
 		stage <= 0;

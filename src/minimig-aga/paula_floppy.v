@@ -807,8 +807,8 @@ always @(posedge clk) begin
   end
 end
 `else // !`ifdef OLD_FLOPPY
+integer i;
 always @(posedge clk) begin
-   integer i;
 
    if(reset)
       disk_writable <= 4'b0000;

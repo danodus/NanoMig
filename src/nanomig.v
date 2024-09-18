@@ -68,9 +68,9 @@ module nanomig (
 );
 
 reg reset_d;
+reg [7:0] reset_s;
+reg rs;
 always @(posedge clk_sys, posedge reset) begin
-        reg [7:0] reset_s;
-        reg rs;
 
         if(reset) reset_s <= '1;
         else begin
@@ -163,7 +163,7 @@ wire        cpu_nrst_out;
 wire  [3:0] cpu_cacr;
 wire [31:0] cpu_nmi_addr;
 
-// wire	  cpu_rst = !reset;
+wire	    cpu_rst = !reset;
    
 wire  [2:0] chip_ipl;
 wire        chip_dtack;

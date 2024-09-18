@@ -6,3 +6,11 @@ src/impl/temp/**
 src/impl/pnr/**
 !src/impl/nanomig_*.json
 *.user
+sim/obj_dir/
+sim/nanomig
+sim/df0.adf
+sim/kick13.rom
+src/top.json
+src/top.pack
+src/top.fs
+src/*.log

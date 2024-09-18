@@ -138,8 +138,8 @@ sector_dpram buffer(
 );
 `endif
    
+reg	  startD;   
 always @(posedge clk) begin
-   reg	  startD;   
    
    if(!rstn) begin
       irq <= 1'b0;

@@ -351,9 +351,9 @@ reg  [ 7:0] ycount;
 reg  [ 7:0] mouse0scr;
 
 // mouse counters
+reg old_level;
+reg wheel;
 always @(posedge clk) begin
-	reg old_level;
-	reg wheel;
 	
 	old_level <= kms_level;
 

@@ -982,8 +982,8 @@ assign custom_data_out[15:0] = agnus_data_out[15:0]
 assign _cpu_reset = _rst;
 
 reg _rst;
+reg r;
 always @(posedge clk) begin
-	reg r;
 	r <= ~(cpurst || sys_reset);
 	_rst <= r;
 end

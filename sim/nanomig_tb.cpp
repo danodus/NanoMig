@@ -247,9 +247,11 @@ void capture_video(void) {
 
 	  //	  SDL_Texture* target = SDL_GetRenderTarget(renderer);
 	  //	  SDL_SetRenderTarget(renderer, texture);
+#if 0    
 	  char name[32];
 	  sprintf(name, "screenshots/frame%04d.png", frame);
 	  save_texture(sdl_renderer, sdl_texture, name);
+#endif
 	  //printf ("simulation_time: %.3f seconds\n", (simulation_time));
 
 	  if (g_vAmigaTS_screenshot_name != "") { // there is a name -> take a screenshot when wait time is reached and then exit
@@ -261,7 +263,6 @@ void capture_video(void) {
 	  }
 	}
   }
-	
   // process SDL events
   SDL_Event event;
   while( SDL_PollEvent( &event ) ){
