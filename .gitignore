@@ -5,4 +5,7 @@ src/impl/gwsynthesis/**
 src/impl/temp/**
 src/impl/pnr/**
 !src/impl/nanomig_*.json
+src/*.log
+src/top.json
+src/top.pack
 *.user

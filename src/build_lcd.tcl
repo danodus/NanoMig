@@ -52,9 +52,11 @@ add_file minimig-aga/minimig_sram_bridge.v
 add_file minimig-aga/minimig_syscontrol.v
 add_file minimig-aga/userio.v
 add_file minimig/Amber.v
-add_file fx68k/fx68k.sv
-add_file fx68k/fx68kAlu.sv
-add_file fx68k/uaddrPla.sv
+add_file fx68k/fx68k.v
+add_file fx68k/fx68kAlu.v
+add_file fx68k/uaddrPla.v
+add_file fx68k/fx68k_MicroRom.v
+add_file fx68k/fx68k_NanoRom.v
 add_file misc/mcu_spi.v
 add_file misc/sysctrl.v
 add_file misc/hid.v

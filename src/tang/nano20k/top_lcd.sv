@@ -134,6 +134,7 @@ wire sdram_ready;
 
 // -------------------------- M0S MCU interface -----------------------
 
+/*
 // connect to ws2812 led
 wire [23:0] ws2812_color;
 ws2812 ws2812_inst (
@@ -141,6 +142,7 @@ ws2812 ws2812_inst (
     .color(ws2812_color),
     .data(ws2812)
 );
+*/
 
 // interface to M0S MCU
 wire       mcu_sys_strobe;        // mcu message byte valid for sysctrl
