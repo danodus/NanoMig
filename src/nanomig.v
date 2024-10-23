@@ -163,7 +163,7 @@ wire        cpu_nrst_out;
 wire  [3:0] cpu_cacr;
 wire [31:0] cpu_nmi_addr;
 
-wire	    cpu_rst = !reset;
+wire	    cpu_rst;
    
 wire  [2:0] chip_ipl;
 wire        chip_dtack;

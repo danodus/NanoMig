@@ -401,15 +401,16 @@ assign      IO_WAIT = IO_WAIT_PAULA | IO_WAIT_OSD;
 
 wire        bls;					//blitter slowdown - required for sharing bus cycles between Blitter and CPU
 
-wire        cpurst;
-wire        cpuhlt;
+wire        cpurst = 1'b0;
+wire        cpuhlt = 1'b0;
+assign bootrom = 1'b0;
 
 wire        int7;					//int7 interrupt request from Action Replay
 wire  [2:0] _iplx;			   //interrupt request lines from Paula
 wire        sel_cart;			//Action Replay RAM select
 wire [15:0] cart_data_out;
 
-wire        usrrst;				//user reset from osd interface
+wire        usrrst = 1'b0;				//user reset from osd interface
 wire        hires;				//hires signal from Denise for interpolation filter enable in Amber
 wire  [5:0] ide_config;			//HDD & HDC config: bit #0 enables Gayle, bit #1 enables Master drive, bit #2 enables Slave drive
 
